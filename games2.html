@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Devine le nombre</title>
+<link rel="stylesheet" href="game2.css">
+</head>
+<body>
+
+<div class="cabinet">
+  <div class="cabinet-header">
+    <h1>Devine le nombre</h1>
+    <div class="dot-row">
+      <div class="dot" id="dot1"></div>
+      <div class="dot" id="dot2"></div>
+      <div class="dot" id="dot3"></div>
+    </div>
+  </div>
+
+  <div class="screen">
+
+    <!-- Vue 1 : choix du niveau -->
+    <div class="view active" id="view-level">
+      <p class="prompt">Sélectionnez un niveau de difficulté</p>
+      <div class="levels">
+        <button class="level-btn facile" data-level="1" data-max="30">
+          Facile <span class="range">1 à 30</span>
+        </button>
+        <button class="level-btn moyen" data-level="2" data-max="50">
+          Moyen <span class="range">1 à 50</span>
+        </button>
+        <button class="level-btn difficile" data-level="3" data-max="100">
+          Difficile <span class="range">1 à 100</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Vue 2 : jeu en cours -->
+    <div class="view" id="view-game">
+      <div class="badge" id="range-badge">1 à 30</div>
+      <div class="big-number-slot">
+        <input class="guess-input" type="number" id="guess-input" placeholder="?" inputmode="numeric">
+      </div>
+      <p class="feedback neutral" id="feedback">Entrez votre premier nombre</p>
+      <p class="attempts" id="attempts">Tentative n° 1</p>
+      <button class="action-btn" id="submit-btn">Valider</button>
+    </div>
+
+    <!-- Vue 3 : victoire -->
+    <div class="view" id="view-win">
+      <div class="win-icon">🎉</div>
+      <div class="win-title">Trouvé !</div>
+      <p class="win-detail">Le nombre était <strong id="win-number">--</strong>,<br>trouvé en <strong id="win-attempts">--</strong> tentative(s)</p>
+      <button class="action-btn" id="replay-btn">Rejouer</button>
+      <button class="secondary-btn" id="quit-btn">Changer de niveau</button>
+    </div>
+
+  </div>
+
+  <p class="footer-note">Tapez un nombre puis validez, ou appuyez sur Entrée</p>
+</div>
+
+<script src="game2.js"></script>
+</body>
+</html>
